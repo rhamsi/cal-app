@@ -1,0 +1,223 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.7">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1">&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1">&lt;title&gt;Calorie Tracker&lt;/title&gt;</p>
+<p class="p1">&lt;link rel="manifest" href="manifest.json"&gt;</p>
+<p class="p1">&lt;meta name="theme-color" content="#4CAF50"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;style&gt;</p>
+<p class="p1">body {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-family: -apple-system, BlinkMacSystemFont, sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>margin: 0;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background: #f5f5f5;</p>
+<p class="p1">}</p>
+<p class="p1">header {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background: #4CAF50;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color: white;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding: 15px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size: 20px;</p>
+<p class="p1">}</p>
+<p class="p1">.card {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background: white;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>margin: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding: 15px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-radius: 12px;</p>
+<p class="p1">}</p>
+<p class="p1">button {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background: #4CAF50;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color: white;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border: none;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size: 16px;</p>
+<p class="p1">}</p>
+<p class="p1">select, input {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>margin-top: 6px;</p>
+<p class="p1">}</p>
+<p class="p1">.progress {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background: #ddd;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-radius: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>height: 18px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>overflow: hidden;</p>
+<p class="p1">}</p>
+<p class="p1">.progress-bar {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>height: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background: #4CAF50;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>width: 0%;</p>
+<p class="p1">}</p>
+<p class="p1">.warning {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background: #fff3cd;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>margin-top: 10px;</p>
+<p class="p1">}</p>
+<p class="p1">nav {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>position: fixed;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>bottom: 0;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background: white;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-top: 1px solid #ccc;</p>
+<p class="p1">}</p>
+<p class="p1">nav button {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>flex: 1;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-radius: 0;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background: none;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color: #333;</p>
+<p class="p1">}</p>
+<p class="p1">.hidden { display: none; }</p>
+<p class="p1">&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p1">&lt;header&gt;🍽️ Calorie Tracker&lt;/header&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;div id="today" class="card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;h3&gt;Add Food&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;select id="food"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;option value="130"&gt;Cooked Rice&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;option value="300"&gt;Chapati&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;option value="265"&gt;Paneer&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;option value="61"&gt;Curd&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;option value="52"&gt;Apple&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;option value="89"&gt;Banana&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;option value="884"&gt;Oil / Ghee&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/select&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;select id="type"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;option value="weight"&gt;Weight (grams)&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;option value="serving"&gt;Serving&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/select&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;input type="number" id="value" placeholder="Enter value"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;button onclick="addFood()"&gt;Add&lt;/button&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;h4&gt;Calories Today: &lt;span id="total"&gt;0&lt;/span&gt; / 1300&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="progress"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="progress-bar" id="bar"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="alert"&gt;&lt;/div&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;div id="report" class="card hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;h3&gt;Daily Report&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;ul id="reportList"&gt;&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;button onclick="download()"&gt;⬇️ Download CSV&lt;/button&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;nav&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;button onclick="show('today')"&gt;Today&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;button onclick="show('report')"&gt;Report&lt;/button&gt;</p>
+<p class="p1">&lt;/nav&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;script&gt;</p>
+<p class="p1">const LIMIT = 1300;</p>
+<p class="p1">const WARN = 1100;</p>
+<p class="p2"><br></p>
+<p class="p1">function getDate() {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>return new Date().toISOString().split("T")[0];</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">function load() {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>return JSON.parse(localStorage.getItem("data")) || {};</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">function save(d) {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>localStorage.setItem("data", JSON.stringify(d));</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">function addFood() {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const food = document.getElementById("food");</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const name = food.options[food.selectedIndex].text;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const cal100 = +food.value;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const type = document.getElementById("type").value;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const val = +document.getElementById("value").value;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if (!val) return;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>let cal = type === "weight" ? (val/100)*cal100 : val*cal100;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>cal = Math.round(cal);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>const d = load();</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const date = getDate();</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if (!d[date]) d[date] = [];</p>
+<p class="p1"><span class="Apple-converted-space">  </span>d[date].push({name, cal, time: new Date().toLocaleTimeString()});</p>
+<p class="p1"><span class="Apple-converted-space">  </span>save(d);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById("value").value = "";</p>
+<p class="p1"><span class="Apple-converted-space">  </span>render();</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">function render() {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const d = load();</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const today = getDate();</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const list = d[today] || [];</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const total = list.reduce((s,x)=&gt;s+x.cal,0);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById("total").innerText = total;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById("bar").style.width = Math.min(100,(total/LIMIT)*100)+"%";</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>const alert = document.getElementById("alert");</p>
+<p class="p1"><span class="Apple-converted-space">  </span>alert.innerHTML = "";</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if (total &gt;= WARN &amp;&amp; total &lt; LIMIT) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>alert.innerHTML = `&lt;div class="warning"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>Remaining ${LIMIT-total} kcal.&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>Suggested: fruits, curd, salads, soups</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>const report = document.getElementById("reportList");</p>
+<p class="p1"><span class="Apple-converted-space">  </span>report.innerHTML = "";</p>
+<p class="p1"><span class="Apple-converted-space">  </span>Object.keys(d).forEach(date=&gt;{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const sum = d[date].reduce((s,x)=&gt;s+x.cal,0);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>report.innerHTML += `&lt;li&gt;${date}: ${sum} kcal&lt;/li&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>});</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">function show(id) {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById("today").classList.add("hidden");</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById("report").classList.add("hidden");</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById(id).classList.remove("hidden");</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">function download() {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const d = load();</p>
+<p class="p1"><span class="Apple-converted-space">  </span>let csv="Date,Time,Food,Calories\n";</p>
+<p class="p1"><span class="Apple-converted-space">  </span>Object.keys(d).forEach(date=&gt;{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>d[date].forEach(e=&gt;{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>csv+=`${date},${e.time},${e.name},${e.cal}\n`;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>});</p>
+<p class="p1"><span class="Apple-converted-space">  </span>});</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const blob=new Blob([csv],{type:"text/csv"});</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const a=document.createElement("a");</p>
+<p class="p1"><span class="Apple-converted-space">  </span>a.href=URL.createObjectURL(blob);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>a.download="calorie-report.csv";</p>
+<p class="p1"><span class="Apple-converted-space">  </span>a.click();</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">if ('serviceWorker' in navigator) {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>navigator.serviceWorker.register('service-worker.js');</p>
+<p class="p1">}</p>
+<p class="p1">render();</p>
+<p class="p1">&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
